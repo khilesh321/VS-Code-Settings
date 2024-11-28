@@ -19,6 +19,13 @@
 		],
 		"description": "Log output to console"
 	},
+	"Print to console3": {
+		"prefix": "lg",
+		"body": [
+			"console.log($1)",
+		],
+		"description": "Log output to console"
+	},
 	"Backend Boilerplate Code": {
 		"prefix": "boiler",
 		"body": [
