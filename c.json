@@ -1,0 +1,62 @@
+{
+	"void boilerplate": {
+	  "prefix": "boivoid",
+	  "body": [
+		"#include <stdio.h>\n",
+		"void main(){",
+		"\t$1",
+		"}"
+	  ],
+	  "description": "The C language boilerplate"
+	},
+
+	"Hello World": {
+		"prefix": "hello",
+		"body" : [
+			"#include <stdio.h>\n",
+			"int main(){\n",
+			"\tprintf(\"Hello World!\");$0",
+			"\n\treturn 0;",
+		"}"
+		]
+	},
+	
+	"Int boilerplate": {
+	  "prefix": "boiint",
+	  "body": [
+		"#include <stdio.h>\n",
+		"int main(){", 
+		"\t$0", 
+		"\treturn 0;",
+		"}"
+	  ],
+	  "description": "The C language boilerplate"
+	},
+	
+	"printf statement1": {
+	  "prefix": "pf",
+	  "body": [
+		"printf(\"$1\\n\");"
+	  ],
+	  "description": "A printf statement with a string and cursor position"
+	},
+	"printf statement2": {
+	  "prefix": "pfl",
+	  "body": [
+		"printf(\"$1\\n\");",
+		"$2"
+	  ],
+	  "description": "A printf statement with a string and cursor position"
+	},
+
+	"scan integer": {
+		"prefix": "sfint",
+		"body": [
+			"scanf(\"%d\",&$1);",
+			"$2"
+		]
+	}
+	
+
+
+  }
