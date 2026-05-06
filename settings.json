@@ -4,7 +4,7 @@
     "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
         // "javascript": "node",
-        "javascript": "cls && function prompt{\">>\"}  &&  $Host.ui.rawui.foregroundcolor = \"green\" && cd $dir && node $fileName && $Host.ui.rawui.foregroundcolor = \"red\"",
+        "javascript": "cls && function prompt{\">>\"}  &&  $Host.ui.rawui.foregroundcolor = \"green\" && cd $dir && bun run $fileName && $Host.ui.rawui.foregroundcolor = \"red\"",
         "javascript-nodemon": "cls && function prompt{\">>\"}  &&  $Host.ui.rawui.foregroundcolor = \"green\" && cd $dir && npx nodemon $fileName && $Host.ui.rawui.foregroundcolor = \"red\"",
         // "java": "cls && function prompt{\">>\"} && $Host.ui.rawui.foregroundcolor = \"cyan\" && cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt && echo 'n",
         "java": "cls && function prompt{\">>\"}  &&  $Host.ui.rawui.foregroundcolor = \"green\" && cd $dir && javac $fileName && java $fileNameWithoutExt && $Host.ui.rawui.foregroundcolor = \"red\"",
@@ -29,7 +29,7 @@
         "fsharp": "fsi",
         "csharp": "scriptcs",
         "vbscript": "cscript //Nologo",
-        "typescript": "npx ts-node",
+        "typescript": "bun run",
         "coffeescript": "coffee",
         "scala": "scala",
         "swift": "swift",
@@ -79,7 +79,7 @@
     "editor.minimap.renderCharacters": false,
     "extensions.autoUpdate": false,
     "workbench.colorCustomizations": {
-        "editor.lineHighlightBackground": "#1E1E1EAA"
+        "editor.lineHighlightBackground": "#1E1E1EAA",
     },
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.profiles.windows": {
@@ -179,12 +179,12 @@
         "*.hdr": "default"
     },
     "roo-cline.allowedCommands": [
-        "npm test",
-        "npm install",
-        "tsc",
         "git log",
         "git diff",
-        "git show"
+        "git show",
+        "npm test",
+        "npm install",
+        "tsc"
     ],
     "kilo-code.allowedCommands": [
         "git log",
@@ -198,6 +198,9 @@
     "kilo-code.deniedCommands": [],
     "chat.instructionsFilesLocations": {
         ".github/instructions": true,
+        ".claude/rules": true,
+        "~/.copilot/instructions": true,
+        "~/.claude/rules": true,
         "C:\\Users\\khile\\AppData\\Local\\Temp\\postman-collections-post-response.instructions.md": true,
         "C:\\Users\\khile\\AppData\\Local\\Temp\\postman-collections-pre-request.instructions.md": true,
         "C:\\Users\\khile\\AppData\\Local\\Temp\\postman-folder-post-response.instructions.md": true,
@@ -223,17 +226,11 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "chat.tools.terminal.autoApprove": {
-        "npm run build": true,
-        "npm run lint": true,
-        "npx": true
-    },
     "chat.agent.maxRequests": 100,
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.renderWhitespace": "none",
-    "workbench.statusBar.visible": false,
     "chat.agent.thinkingStyle": "fixedScrolling",
     "chat.agent.todoList": {
         "position": "default"
@@ -241,7 +238,59 @@
     "inlineChat.enableV2": true,
     "inlineChat.notebookAgent": true,
     "editor.cursorBlinking": "expand",
-    "workbench.settings.applyToAllProfiles": [
-        
-    ]
+    "workbench.settings.applyToAllProfiles": [],
+    "chat.mcp.gallery.enabled": true,
+    "chat.tools.urls.autoApprove": {},
+    "chat.mcp.assisted.nuget.enabled": true,
+    "github.copilot.chat.githubMcpServer.enabled": true,
+    "chat.tools.terminal.enableAutoApprove": false,
+    "kilo-code.debug": false,
+    "github.copilot.chat.agentDebugLog.enabled": true,
+    "chat.viewSessions.orientation": "stacked",
+    "terminal.integrated.commandsToSkipShell": [
+        "kilo-code.new.agentManagerOpen",
+        "kilo-code.new.agentManager.showTerminal"
+    ],
+    "kilo-code.new.autocomplete.enableAutoTrigger": true,
+    "kilo-code.new.autocomplete.enableChatAutocomplete": true,
+    "IntelligentCodeCompletion.disableLanguages": {
+        "vue": "false",
+        "typescript": "false",
+        "javascript": "false",
+        "python": "false",
+        "go": "false",
+        "c": "false",
+        "c++": "false",
+        "shell": "false",
+        "bash": "false",
+        "batch": "false",
+        "lua": "false",
+        "java": "false",
+        "php": "false",
+        "ruby": "false"
+    },
+    "FunctionQuickCommands.disableLanguages": {
+        "typescript": "false",
+        "javascript": "false",
+        "python": "false",
+        "go": "false",
+        "c": "false",
+        "c++": "false",
+        "lua": "false",
+        "java": "false",
+        "php": "false",
+        "ruby": "false"
+    },
+    "costrict.debug": false,
+    "costrict.allowedCommands": [
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "costrict.deniedCommands": [],
+    "costrict.customStoragePath": "",
+    "roo-cline.debug": false,
+    "workbench.browser.openLocalhostLinks": false,
+    "update.enableWindowsBackgroundUpdates": false,
+    "update.mode": "manual",
 }
